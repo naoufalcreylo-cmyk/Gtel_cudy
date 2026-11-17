@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="ar-MA" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>GTEL LT400 Outdoor Darija</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: the existing Dropify section order, re-dressed in GTEL Store purple + gold; mobile-first single column, two columns from 900px. Single light theme on purpose (it mirrors the Dropify page). */
+:root{
+  --plum:#552583;      /* GTEL logo purple */
+  --plum-deep:#2a0f45; /* dark sections */
+  --plum-soft:#7a46ad; /* accent words on white */
+  --gold:#FDB927;      /* GTEL gold: buttons, accents on dark */
+  --gold-dk:#e9a80f;
+  --lilac:#F3EDF8;     /* tinted bands */
+  --paper:#FBFAFD;
+  --ink:#1f1530;
+  --muted:#5f566b;
+  --line:#e6deee;
+  --white:#ffffff;
+  --ok:#17734a;
+  --note-bg:#fff6dc;
+  --note-ink:#6b4a00;
+  --f:"Tajawal","Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --r:18px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:76px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--f);padding-bottom:76px}
+@media (min-width:900px){body{padding-bottom:0}}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3{margin:0;line-height:1.15;letter-spacing:-.015em;text-wrap:balance}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
+.wrap{width:100%;max-width:1120px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{padding-block:56px}
+@media (min-width:900px){.band{padding-block:88px}}
+.tint{background:var(--lilac)}
+.dark{background:var(--plum-deep);color:var(--white)}
+
+/* eyebrow with signal bars (kept from the Dropify style) */
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--plum)}
+.dark .eyebrow,.hero .eyebrow{color:var(--gold)}
+.bars{display:inline-flex;align-items:flex-end;gap:2px;height:12px}
+.bars i{display:block;width:3px;background:currentColor;border-radius:1px}
+.bars i:nth-child(1){height:4px}.bars i:nth-child(2){height:7px}.bars i:nth-child(3){height:10px}.bars i:nth-child(4){height:12px}
+.h2{font-size:clamp(28px,6.6vw,42px);font-weight:800;color:var(--plum-deep);margin-top:12px}
+.dark .h2{color:var(--white)}
+.h2 em{font-style:normal;color:var(--plum-soft)}
+.dark .h2 em{color:var(--gold)}
+.lead{font-size:17px;color:var(--muted);margin-top:14px;max-width:60ch}
+.dark .lead{color:#dcd0e8}
+.head{max-width:680px}
+.head.c{margin-inline:auto;text-align:center}
+.head.c .lead{margin-inline:auto}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:12px 24px;border-radius:14px;border:0;background:var(--gold);color:var(--plum-deep);font:800 16.5px/1.2 var(--f);text-decoration:none;cursor:pointer;box-shadow:0 8px 22px rgba(253,185,39,.32);transition:background-color .15s,transform .15s}
+.btn:hover{background:var(--gold-dk)}
+.btn:active{transform:translateY(1px)}
+.btn svg{width:20px;height:20px}
+.btn-full{width:100%}
+
+/* review bar (not part of the landing page) */
+.review{background:#1b0a2e;color:#f1e9f9;font-size:13px}
+.review .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding-block:8px}
+.review strong{color:var(--gold)}
+.review button{margin-left:auto;font:700 13px var(--f);background:transparent;color:var(--white);border:1px solid #6a4b8c;border-radius:999px;padding:6px 12px;cursor:pointer}
+.note{display:none;margin-top:14px;background:var(--note-bg);color:var(--note-ink);border:1px dashed #e0b84a;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.45;max-width:640px}
+.show-notes .note{display:block}
+.dark .note{background:#3a2357;color:#ffe3a1;border-color:#8a6a2b}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:31;background:var(--white)}
+.top .wrap{display:flex;align-items:center;gap:12px;height:64px}
+.top .logo img{width:104px}
+.top .seller{font-size:12.5px;color:var(--muted);line-height:1.3;border-left:1px solid var(--line);padding-left:12px}
+.top .seller b{display:block;color:var(--ink);font-weight:700}
+.top .call{margin-left:auto;display:flex;align-items:center;gap:8px;font-weight:800;font-size:14px;color:var(--plum);text-decoration:none;white-space:nowrap}
+.top .call svg{width:18px;height:18px}
+@media (max-width:430px){.top .seller{display:none}.top .call span{font-size:13px}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(120% 80% at 85% 10%,#4a1f78 0%,var(--plum-deep) 60%);color:var(--white)}
+.hero .wrap{display:grid;gap:28px;padding-block:32px 40px}
+@media (min-width:900px){.hero .wrap{grid-template-columns:1.05fr .95fr;align-items:center;gap:56px;padding-block:64px 72px}}
+.hero h1{font-size:clamp(34px,9vw,58px);font-weight:800;margin-top:14px;letter-spacing:-.025em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lead{color:#e3d8ee;font-size:17.5px}
+.price-line{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 12px;margin-top:22px}
+.price-line .p{font-size:32px;font-weight:800;color:var(--white);font-variant-numeric:tabular-nums}
+.price-line .p small{font-size:16px;font-weight:700;margin-left:4px}
+.price-line .was{font-size:18px;font-weight:600;color:#b9a8cf;font-variant-numeric:tabular-nums}
+.price-line .off{font-size:13px;font-weight:800;color:var(--plum-deep);background:var(--gold);border-radius:999px;padding:3px 9px}
+.price-line .by{flex-basis:100%;font-size:14px;color:#cdbfe0}
+.cta-row{margin-top:28px}
+.cta-row.c{text-align:center}
+.hero .btn{margin-top:18px}
+.assure{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:22px;max-width:520px}
+.assure li{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;font-size:12.5px;font-weight:600;color:#e9e0f3;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 6px}
+.assure svg{width:20px;height:20px;color:var(--gold)}
+.hero-media{position:relative;max-width:460px;width:100%;justify-self:center}
+.hero-media .arch{border-radius:220px 220px 26px 26px;overflow:hidden;aspect-ratio:4/4.6;background:#3b1a5e;box-shadow:0 30px 60px rgba(10,0,20,.45)}
+.hero-media .arch img{width:100%;height:100%;object-fit:cover}
+.chip{position:absolute;display:flex;align-items:center;gap:8px;background:var(--white);color:var(--plum-deep);font-weight:800;font-size:13px;padding:9px 13px;border-radius:999px;box-shadow:0 10px 24px rgba(20,0,40,.25)}
+.chip svg{width:18px;height:18px;color:var(--plum)}
+.chip.a{top:14%;left:-6px}
+.chip.b{bottom:12%;right:-6px}
+@media (max-width:420px){.chip.a{left:4px}.chip.b{right:4px}}
+.hero-media .cap{margin-top:10px;font-size:11.5px;color:#b7a6cc;text-align:center}
+
+/* places marquee */
+.places{background:var(--plum);color:var(--white);overflow:hidden;border-block:1px solid #6b3a9a}
+.places .track{display:flex;gap:10px;width:max-content;padding-block:14px;animation:slide 38s linear infinite}
+.places span{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;font-weight:700;font-size:14.5px;padding:8px 16px;border:1px solid rgba(255,255,255,.28);border-radius:999px}
+.places span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold)}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.places .track{animation:none;flex-wrap:wrap;width:auto;justify-content:center;padding-inline:16px}}
+
+/* problem */
+.split{display:grid;gap:32px}
+@media (min-width:900px){.split{grid-template-columns:1fr 1fr;align-items:center;gap:64px}}
+.signal-card{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 18px 40px rgba(60,20,100,.08)}
+.signal-row{display:flex;align-items:center;gap:16px;padding:16px 0}
+.signal-row+.signal-row{border-top:1px dashed var(--line)}
+.signal-row .ic{flex:none;width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:var(--lilac);color:var(--plum)}
+.signal-row .ic svg{width:26px;height:26px}
+.signal-row .t{flex:1;min-width:0}
+.signal-row .t b{display:block;font-size:16px;color:var(--ink)}
+.signal-row .t span{font-size:14px;color:var(--muted)}
+.meter{display:flex;align-items:flex-end;gap:4px;height:30px;flex:none}
+.meter i{width:7px;border-radius:2px;background:#e3d9ec}
+.meter i:nth-child(1){height:8px}.meter i:nth-child(2){height:15px}.meter i:nth-child(3){height:22px}.meter i:nth-child(4){height:30px}
+.meter.low i:nth-child(1){background:#d0492f}
+.meter.high i{background:var(--ok)}
+.signal-card .fine{font-size:12.5px;color:var(--muted);margin-top:10px}
+.checks{display:grid;gap:14px;margin-top:24px}
+.checks li{display:grid;grid-template-columns:26px 1fr;gap:12px;font-size:16px}
+.checks svg{width:24px;height:24px;color:var(--plum);margin-top:1px}
+.checks b{color:var(--ink)}
+
+/* how it works / install */
+.flow{display:grid;gap:12px;margin-top:36px}
+@media (min-width:900px){.flow{grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch}}
+.node{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;gap:16px;align-items:flex-start}
+@media (min-width:900px){.node{flex-direction:column}}
+.node .ic{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--plum);color:var(--gold)}
+.node .ic svg{width:26px;height:26px}
+.node h3{font-size:17px;color:var(--plum-deep)}
+.node p{font-size:14.5px;color:var(--muted);margin-top:4px}
+.arrow{display:grid;place-items:center;color:var(--plum-soft)}
+.arrow svg{width:26px;height:26px;transform:rotate(90deg)}
+@media (min-width:900px){.arrow svg{transform:none}}
+.steps-grid{display:grid;gap:28px;margin-top:48px}
+@media (min-width:900px){.steps-grid{grid-template-columns:1fr 1fr;gap:56px;align-items:start}}
+.steps{display:grid;gap:12px;counter-reset:s}
+.step{display:grid;grid-template-columns:44px 1fr;gap:14px;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.step::before{counter-increment:s;content:counter(s);width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--lilac);color:var(--plum);font-weight:800;font-size:18px}
+.step h3{font-size:17px;color:var(--plum-deep)}
+.step p{font-size:14.5px;color:var(--muted);margin-top:4px}
+.need{border-radius:var(--r);background:var(--plum-deep);color:var(--white);padding:22px}
+.need h3{font-size:17px;color:var(--gold)}
+.need ul{display:grid;gap:10px;margin-top:12px}
+.need li{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:14.5px;color:#e6dcf0}
+.need li svg{width:18px;height:18px;color:var(--gold);margin-top:2px}
+.photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.photo-pair figure{margin:0;background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.photo-pair img{aspect-ratio:1;object-fit:cover;width:100%}
+.photo-pair figcaption{font-size:12.5px;color:var(--muted);padding:8px 12px 12px}
+.help{margin-top:12px;font-size:14.5px;color:var(--muted)}
+.help b{color:var(--plum)}
+
+/* outdoor */
+.tough{display:grid;gap:32px}
+@media (min-width:900px){.tough{grid-template-columns:.9fr 1.1fr;align-items:center;gap:64px}}
+.tough-media{border-radius:26px;overflow:hidden;aspect-ratio:16/10;background:#3b1a5e}
+.tough-media img{width:100%;height:100%;object-fit:cover}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:18px}
+.stat .k{font-size:30px;font-weight:800;color:var(--gold);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat .v{font-size:14.5px;color:#e3d8ee;margin-top:2px}
+.dark .btn{margin-top:28px}
+
+/* operators */
+.ops{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px}
+.op{background:var(--white);border:1px solid var(--line);border-radius:var(--r);height:112px;display:grid;place-items:center;padding:16px}
+.op img{max-height:46px;max-width:100%;width:auto}
+.op.orange img{max-height:52px}
+@media (max-width:480px){.op{height:88px;padding:12px}.op img{max-height:34px}.op.orange img{max-height:40px}}
+.op-facts{display:grid;gap:12px;margin-top:20px}
+@media (min-width:760px){.op-facts{grid-template-columns:repeat(3,1fr)}}
+.op-fact{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:14.5px;color:var(--muted);background:var(--white);border:1px solid var(--line);border-radius:14px;padding:14px}
+.op-fact svg{width:20px;height:20px;color:var(--plum);margin-top:1px}
+.op-fact b{color:var(--ink)}
+.disclaim{font-size:12.5px;color:var(--muted);margin-top:16px;text-align:center}
+
+/* uses */
+.uses{display:grid;grid-auto-flow:column;grid-auto-columns:78%;gap:12px;margin-top:28px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none}
+.uses::-webkit-scrollbar{display:none}
+.uses>*{scroll-snap-align:start}
+@media (min-width:760px){.uses{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);overflow:visible}}
+.use{position:relative;border-radius:22px;overflow:hidden;min-height:260px;display:flex;align-items:flex-end;color:var(--white);background:#2a0f45}
+.use img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.use::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,15,69,0) 35%,rgba(42,15,69,.92) 100%)}
+.use div{position:relative;z-index:1;padding:20px}
+.use h3{font-size:20px}
+.use p{font-size:14.5px;color:#eadff5;margin-top:4px}
+.also{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;align-items:center}
+.also b{font-size:14px;color:var(--ink);margin-right:4px}
+.also span{font-size:13.5px;font-weight:700;color:var(--plum);background:var(--white);border:1px solid var(--line);border-radius:999px;padding:7px 13px}
+
+/* spec */
+.spec-wrap{display:grid;gap:28px}
+@media (min-width:900px){.spec-wrap{grid-template-columns:.8fr 1.2fr;align-items:center;gap:56px}}
+.spec-img{background:var(--white);border:1px solid var(--line);border-radius:26px;padding:18px;max-width:420px;width:100%;justify-self:center}
+.spec{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:6px 20px;margin-top:22px}
+.spec div{display:grid;grid-template-columns:minmax(110px,40%) 1fr;gap:12px;padding:13px 0;font-size:14.5px}
+.spec div+div{border-top:1px solid var(--line)}
+.spec dt{color:var(--muted)}
+.spec dd{margin:0;font-weight:700;color:var(--ink)}
+.spec dd small{display:block;font-weight:500;color:var(--muted);font-size:12.5px}
+
+/* seller (replaces the reviews) */
+.reviews{display:grid;grid-auto-flow:column;grid-auto-columns:84%;gap:12px;margin-top:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none}
+.reviews::-webkit-scrollbar{display:none}
+.reviews>*{scroll-snap-align:center}
+@media (min-width:900px){.reviews{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);overflow:visible}}
+.dots{display:flex;justify-content:center;gap:6px;margin-top:14px}
+.dots button{width:8px;height:8px;padding:0;border:0;border-radius:999px;background:#cdb9e0;cursor:pointer;transition:width .2s,background-color .2s}
+.dots button[aria-current="true"]{width:22px;background:var(--plum)}
+@media (min-width:900px){.dots{display:none}}
+.sample{display:inline-block;margin-top:12px;font-size:12px;font-weight:800;color:var(--note-ink);background:var(--note-bg);border:1px dashed #e0b84a;border-radius:999px;padding:4px 10px}
+.rv{display:flex;flex-direction:column;gap:14px;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:0 10px 26px rgba(60,20,100,.06)}
+.rv blockquote::before{content:"“";display:block;font-size:40px;line-height:.6;font-style:normal;font-weight:800;color:var(--gold);margin-bottom:6px}
+.rv .stars{display:flex;gap:3px;color:#d9cce6}
+.rv .stars svg{width:18px;height:18px}
+.rv blockquote{margin:0;font-size:15px;color:var(--muted);font-style:italic;flex:1}
+.rv .who{display:flex;align-items:center;gap:10px;font-size:14px}
+.rv .av{width:38px;height:38px;border-radius:50%;background:var(--lilac);color:var(--plum);display:grid;place-items:center;font-weight:800}
+.rv .who b{display:block;color:var(--ink)}
+.rv .who span{color:var(--muted);font-size:12.5px}
+.rv .slot{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--note-ink);background:var(--note-bg);border-radius:999px;padding:3px 9px}
+.seller-strip{margin-top:44px;padding-top:32px;border-top:1px solid #dccfe8}
+.seller-strip .top-line{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.seller-strip .top-line img{width:96px}
+.seller-strip .top-line p{font-size:15px;color:var(--muted);flex:1;min-width:220px}
+.seller-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+@media (min-width:760px){.seller-grid{grid-template-columns:repeat(4,1fr)}}
+.sg{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.sg svg{width:24px;height:24px;color:var(--plum)}
+.sg h3{font-size:15px;color:var(--plum-deep);margin-top:8px}
+.sg p{font-size:13px;color:var(--muted);margin-top:4px}
+
+/* faq */
+.faq{display:grid;gap:10px;margin-top:32px;max-width:780px;margin-inline:auto}
+.faq details{background:var(--white);border:1px solid var(--line);border-radius:16px}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;font-weight:700;font-size:16px;color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--lilac);color:var(--plum);font-size:20px;font-weight:700;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 20px 18px;color:var(--muted);font-size:15px}
+
+/* order */
+.order{display:grid;gap:28px}
+@media (min-width:900px){.order{grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}}
+.order-side img{border-radius:22px;background:var(--white);border:1px solid var(--line)}
+.order-side ul{display:grid;gap:10px;margin-top:18px}
+.order-side li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:15px}
+.order-side li svg{width:20px;height:20px;color:var(--ok);margin-top:2px}
+.form{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 24px 50px rgba(60,20,100,.1)}
+.form h3{font-size:22px;color:var(--plum-deep)}
+.form .sub{font-size:14px;color:var(--muted);margin-top:4px}
+.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
+.offer{position:relative;border:1.5px solid var(--line);border-radius:14px;padding:22px 8px 12px;text-align:center;cursor:pointer;background:var(--paper)}
+.offer input{position:absolute;opacity:0;pointer-events:none}
+.offer:has(input:checked){border-color:var(--plum);background:var(--lilac);box-shadow:0 0 0 2px rgba(85,37,131,.15)}
+.offer:has(input:focus-visible){outline:3px solid var(--gold);outline-offset:2px}
+.offer .q{font-weight:800;font-size:14.5px;color:var(--ink)}
+.offer .pr{font-weight:800;font-size:15px;color:var(--plum);margin-top:6px;font-variant-numeric:tabular-nums}
+.offer .old{font-size:12px;color:var(--muted);text-decoration:line-through;font-variant-numeric:tabular-nums}
+.offer .tag{position:absolute;top:-10px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--gold);color:var(--plum-deep);font-size:11px;font-weight:800;padding:3px 8px;border-radius:999px}
+.fields{display:grid;gap:12px;margin-top:18px}
+.fields label{display:block;font-size:14px;font-weight:700;color:var(--ink)}
+.fields label i{font-style:normal;color:#b42318}
+.fields input,.fields select{display:block;width:100%;margin-top:6px;height:50px;border:1.5px solid var(--line);border-radius:12px;padding:0 14px;font:500 16px var(--f);color:var(--ink);background:var(--white)}
+.fields input:focus,.fields select:focus{outline:none;border-color:var(--plum);box-shadow:0 0 0 3px rgba(85,37,131,.15)}
+.form .btn{margin-top:16px}
+.form-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.form-trust li{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;font-size:12px;color:var(--muted)}
+.form-trust svg{width:20px;height:20px;color:var(--plum)}
+.form-msg{margin-top:12px;font-size:14px;color:var(--ok);font-weight:700}
+
+/* final + footer */
+.final{background:radial-gradient(120% 90% at 20% 0%,#4a1f78 0%,var(--plum-deep) 65%);color:var(--white);text-align:center}
+.final h2{font-size:clamp(30px,7vw,46px);font-weight:800}
+.final h2 em{font-style:normal;color:var(--gold)}
+.final .lead{margin-inline:auto;color:#e3d8ee}
+.final .btn{margin-top:26px}
+.final .assure{margin-inline:auto}
+.foot{background:#170726;color:#cfc2de;font-size:14px}
+.foot .wrap{display:grid;gap:24px;padding-block:40px}
+@media (min-width:760px){.foot .wrap{grid-template-columns:1.2fr 1fr 1fr}}
+.foot img{width:112px}
+.foot h4{margin:0 0 8px;color:var(--white);font-size:14px;text-transform:uppercase;letter-spacing:.1em}
+.foot p+p{margin-top:6px}
+.foot .tel{font-weight:800;color:var(--gold);font-size:16px;user-select:all}
+.foot .legal{grid-column:1/-1;border-top:1px solid #33204a;padding-top:16px;font-size:12.5px;color:#9e8fb2}
+
+/* mobile sticky order bar */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:25;background:var(--white);border-top:1px solid var(--line);box-shadow:0 -10px 30px rgba(40,10,70,.12);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;gap:12px}
+.sticky .p{font-weight:800;font-size:18px;color:var(--plum-deep);line-height:1.1;font-variant-numeric:tabular-nums}
+.sticky .p small{display:block;font-size:12px;font-weight:600;color:var(--muted)}
+.sticky .btn{flex:1;min-height:50px;box-shadow:none}
+@media (min-width:900px){.sticky{display:none}}
+
+/* Arabic / RTL: Arabic letters must never be letter-spaced, lines need more air, physical sides flip */
+.rtl{direction:rtl}
+.rtl,.rtl *{letter-spacing:0!important}
+.rtl{line-height:1.75}
+.rtl h1,.rtl h2,.rtl h3{line-height:1.35}
+.rtl .eyebrow{font-size:14px}
+.rtl .review button{margin-left:0;margin-right:auto}
+.rtl .top .seller{border-left:0;padding-left:0;border-right:1px solid var(--line);padding-right:12px}
+.rtl .top .call{margin-left:0;margin-right:auto}
+.rtl .chip.a{left:auto;right:-6px}
+.rtl .chip.b{right:auto;left:-6px}
+@media (max-width:420px){.rtl .chip.a{right:4px}.rtl .chip.b{left:4px}}
+.rtl .btn svg{transform:scaleX(-1)}
+.rtl .places .track{direction:ltr}
+.rtl .places span{direction:rtl}
+.rtl .also b{margin-right:0;margin-left:4px}
+.rtl .spec div{grid-template-columns:minmax(96px,34%) 1fr}
+.rtl .rv blockquote::before{content:"”"}
+.rtl .price-line .p small{margin-left:0;margin-right:6px}
+.rtl .lead{font-size:18px}
+.pains{display:grid;gap:10px;margin-top:22px}
+.pains li{display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start;background:#fff4f2;border:1px solid #f5d5cf;border-radius:14px;padding:12px 14px;font-size:15.5px}
+.pains svg{width:24px;height:24px;color:#c2412d;margin-top:2px}
+.pains b{color:var(--ink)}
+.sol-label{display:block;margin-top:26px;font-weight:800;font-size:17px;color:var(--plum)}
+.checks.after{margin-top:12px}
+</style>
+<style>
+.lang-bar{background:#2a0f45;padding:8px 12px;display:flex;justify-content:center;flex-wrap:wrap;gap:6px;font-family:"Manrope","Tajawal",system-ui,sans-serif;direction:ltr}
+.lang-bar a{color:#fff;text-decoration:none;font-size:14px;font-weight:700;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.25);line-height:1.2;letter-spacing:0}
+.lang-bar a[aria-current]{background:#fdb52a;color:#2a0f45;border-color:#fdb52a}
+.lang-bar a:hover{border-color:#fdb52a}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-cash" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v5M18 9.5v5"/></g></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5h11v9h-11zM13.5 9.5h4l3 3v3h-7"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></g></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M5 3.5h3.2l1.6 4-2 1.3a11 11 0 0 0 5.4 5.4l1.3-2 4 1.6V17a2.5 2.5 0 0 1-2.7 2.5A15.5 15.5 0 0 1 2.5 6.2 2.5 2.5 0 0 1 5 3.5z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M7.8 12.3l2.8 2.8 5.6-5.8"/></g></symbol>
+  <symbol id="i-tick" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-tower" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 11v10M8.5 21h7M9 14.5l3-3.5 3 3.5"/><circle cx="12" cy="9" r="1.6"/><path d="M8 5.5a5.5 5.5 0 0 0 0 7M16 5.5a5.5 5.5 0 0 1 0 7M5.3 3a9 9 0 0 0 0 12M18.7 3a9 9 0 0 1 0 12"/></g></symbol>
+  <symbol id="i-router" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="8" width="10" height="13" rx="2"/><path d="M9 8V2.5M15 8V2.5M10 17.5h4"/></g></symbol>
+  <symbol id="i-cable" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2.5" width="8" height="7" rx="1"/><path d="M10 5.5h4M12 9.5v4a4 4 0 0 1-4 4H5M5 21.5v-8"/><path d="M15 15.5l3-3 3 3M18 12.5v9"/></g></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.6 16a5 5 0 0 1 6.8 0"/><circle cx="12" cy="19.3" r="1.1" fill="currentColor"/></g></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 10.5L12 3.5l8.5 7V20a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1z"/><path d="M9.5 21v-6h5v6"/></g></symbol>
+  <symbol id="i-sim" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.5h8.5l4 4V20a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 20V4A1.5 1.5 0 0 1 6 2.5z"/><rect x="8" y="11" width="8" height="7" rx="1"/><path d="M12 11v7M8 14.5h8"/></g></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2.5v5M15 2.5v5M6.5 7.5h11v3a5.5 5.5 0 0 1-11 0zM12 16v5.5"/></g></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M12 2.8s6.5 7.2 6.5 11.7a6.5 6.5 0 0 1-13 0C5.5 10 12 2.8 12 2.8z"/></symbol>
+  <symbol id="i-return" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h11a5 5 0 0 1 0 10H8"/><path d="M8 4L4 8l4 4"/></g></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l7.5 3v6c0 4.6-3.2 8-7.5 9.4C7.7 19.8 4.5 16.4 4.5 11.8v-6z"/><path d="M8.8 12l2.3 2.3 4.2-4.5"/></g></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 9.5l1.5-5h14l1.5 5M3.5 9.5h17a3 3 0 0 1-5.7 1.3 3 3 0 0 1-5.6 0 3 3 0 0 1-5.7-1.3zM5 12v8.5h14V12M10 20.5v-5h4v5"/></g></symbol>
+  <symbol id="i-tools" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4 4 0 0 0 5 5L12 19a2.1 2.1 0 0 1-3-3z"/><path d="M14.5 6.5L17 4l3 3-2.5 2.5"/></g></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></g></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M13 2.5L5 13.5h6l-1 8 8-11h-6z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M9 9l6 6M15 9l-6 6"/></g></symbol>
+</svg>
+
+<div class="rtl" dir="rtl" lang="ar">
+<div class="review" role="note">
+  <div class="wrap">
+    <span><strong>Maquette AR (titres en darija) à valider</strong> · même page, titres en darija, textes en arabe · non publiée · formulaire inactif</span>
+  </div>
+</div>
+
+<nav class="lang-bar" aria-label="Langue / اللغة"><a href="../fr/" lang="fr">Français</a><a href="../ar/" lang="ar" dir="rtl">العربية</a><a href="../ar-darija/" aria-current="page" lang="ar-MA" dir="rtl">عربية + دارجة</a><a href="../darija/" lang="ar-MA" dir="rtl">الدارجة</a></nav>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="GTEL Store"><img src="../assets/gtel-logo.png" alt="GTEL Store" width="339" height="202"></a>
+    <p class="seller"><b>يبيعه GTEL Store</b>الدار البيضاء · منذ 2009</p>
+    <a class="call" href="tel:+212666287341"><svg aria-hidden="true"><use href="#i-phone"/></svg><bdi dir="ltr">06 66 28 73 41</bdi></a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- 1. HERO -->
+<section class="hero" aria-labelledby="h-hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>راوتر 4G خارجي · <bdi>Cudy LT400 Outdoor</bdi></span>
+      <h1 id="h-hero">ما واصلكش الفيبر؟ <em>دخّل الأنترنيت 4G لدارك</em></h1>
+      <p class="lead">ثبّت الراوتر في الخارج، حيث تكون شبكة مشغّلك أقوى. يلتقط شبكة 4G عبر بطاقة SIM الخاصة بك، ويوزّع الاتصال عبر الويفي أو عبر الكابل.</p>
+      <div class="price-line"><span class="p">897<small>درهم</small></span><s class="was">1299 درهم</s><span class="off"><bdi dir="ltr">−31 %</bdi></span><span class="by">راوتر من علامة Cudy، يبيعه ويوصله GTEL Store</span></div>
+      <a class="btn" href="#commande">اطلب الراوتر الآن <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <ul class="assure">
+        <li><svg aria-hidden="true"><use href="#i-cash"/></svg>الدفع عند الاستلام</li>
+        <li><svg aria-hidden="true"><use href="#i-truck"/></svg>توصيل مجاني</li>
+        <li><svg aria-hidden="true"><use href="#i-return"/></svg>إرجاع خلال 7 أيام</li>
+      </ul>
+    </div>
+    <div class="hero-media">
+      <div class="arch"><img src="../assets/hero.webp" alt="راوتر Cudy LT400 Outdoor مثبت على حائط خارجي تحت الشمس" width="900" height="1117" fetchpriority="high"></div>
+      <span class="chip a"><svg aria-hidden="true"><use href="#i-drop"/></svg>مقاوم للمطر والغبار: IP65</span>
+      <span class="chip b"><svg aria-hidden="true"><use href="#i-sim"/></svg>اتصالات المغرب · أورنج · إنوي</span>
+      <p class="cap">صورة توضيحية</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2. LIEUX -->
+<div class="places" aria-label="أماكن الاستعمال">
+  <div class="track">
+    <span>المنازل والفيلات</span><span>المنازل الثانوية</span><span>الضيعات</span><span>أوراش البناء</span><span>المقاهي والمحلات</span><span>كاميرات المراقبة</span>
+    <span aria-hidden="true">المنازل والفيلات</span><span aria-hidden="true">المنازل الثانوية</span><span aria-hidden="true">الضيعات</span><span aria-hidden="true">أوراش البناء</span><span aria-hidden="true">المقاهي والمحلات</span><span aria-hidden="true">كاميرات المراقبة</span>
+  </div>
+</div>
+
+<!-- 3. PROBLÈME / SOLUTION -->
+<section class="band" aria-labelledby="h-prob">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>المشكلة</span>
+      <h2 class="h2" id="h-prob">الريزو ضعيف وسط الدار؟ <em>والكونيكسيون كتقطع؟</em></h2>
+      <p class="lead">هذه مشكلة يعيشها كثير من الناس في المغرب، خاصة في البادية والضيعات والأحياء التي لم يصلها الفيبر بعد.</p>
+      <ul class="pains">
+        <li><svg aria-hidden="true"><use href="#i-x"/></svg><span><b>الفيبر لم يصل بعد</b> إلى حيّك أو ضيعتك، أو تركيب خط ثابت يتطلب وقتاً طويلاً.</span></li>
+        <li><svg aria-hidden="true"><use href="#i-x"/></svg><span><b>داخل المنزل الإشارة ضعيفة:</b> الجدران السميكة تحجب شبكة 4G، فيبقى الهاتف على خط أو خطين.</span></li>
+        <li><svg aria-hidden="true"><use href="#i-x"/></svg><span><b>الاتصال يتقطع:</b> الفيديو يتوقف، المكالمات عبر واتساب تنقطع، وكاميرات المراقبة لا تبقى متصلة.</span></li>
+      </ul>
+      <span class="sol-label">الحل: راوتر 4G يُثبَّت في الخارج</span>
+      <ul class="checks after">
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>يُثبَّت على حائط أو عمود في الخارج،</b> في المكان الذي تكون فيه شبكة 4G أقوى من داخل البيت.</span></li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>يعمل ببطاقة SIM من مشغّلك</b> مع باقة إنترنت، بدون فيبر وبدون خط ثابت.</span></li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>يوزّع الاتصال على أجهزتك</b> عبر الويفي أو بكابل إيثرنت.</span></li>
+      </ul>
+      <div class="cta-row"><a class="btn" href="#commande">اطلب الآن بـ 897 درهم <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="signal-card" role="img" aria-label="مثال: إشارة 4G ضعيفة داخل المنزل وأفضل في الخارج">
+      <div class="signal-row">
+        <span class="ic"><svg aria-hidden="true"><use href="#i-home"/></svg></span>
+        <span class="t"><b>الهاتف داخل المنزل</b><span>الجدران تحجب جزءاً من الإشارة</span></span>
+        <span class="meter low" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      </div>
+      <div class="signal-row">
+        <span class="ic"><svg aria-hidden="true"><use href="#i-router"/></svg></span>
+        <span class="t"><b>الراوتر مثبت في الخارج</b><span>في المكان الذي تكون فيه 4G أقوى</span></span>
+        <span class="meter high" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      </div>
+      <p class="fine">مثال توضيحي. الإشارة الفعلية تختلف حسب مكانك ومشغّلك.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. INSTALLATION -->
+<section class="band tint" aria-labelledby="h-how">
+  <div class="wrap">
+    <div class="steps-grid" style="margin-top:0">
+      <div>
+        <span class="eyebrow"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>التركيب</span>
+        <h2 class="h2" id="h-how">كيتحط برّا فين الريزو قوي، <em>ونتا كتكونيكطا من الداخل</em></h2>
+        <p class="lead">كابل واحد يربط الراوتر بالداخل: ينقل الكهرباء والإنترنت معاً. بعدها، اتصل بويفي الراوتر أو اربط جهازاً بالمحوّل.</p>
+        <ol class="steps" style="margin:20px 0 0;padding:0;list-style:none">
+          <li class="step"><div><h3>أدخل بطاقة Nano SIM</h3><p>افتح الغطاء السفلي: مكان الشريحة بجانب منفذ الكابل. استعمل شريحة بباقة إنترنت مفعّلة.</p></div></li>
+          <li class="step"><div><h3>اختر المكان المناسب</h3><p>تحقّق بهاتفك من المكان الذي تكون فيه شبكة 4G لمشغّلك أقوى في الخارج.</p></div></li>
+          <li class="step"><div><h3>ثبّت الراوتر</h3><p>على عمود باستعمال الحلقة المرفقة، أو على حائط. اجعل الهوائيات متجهة إلى الأعلى.</p></div></li>
+          <li class="step"><div><h3>اربط الكابل</h3><p>اربط الراوتر بمحوّل PoE، ثم صِل المحوّل بمقبس كهربائي داخل المنزل. تتم الإعدادات من المتصفح أو من تطبيق Cudy.</p></div></li>
+        </ol>
+      </div>
+      <div style="display:grid;gap:12px">
+        <div class="need">
+          <h3>ما يجب توفيره</h3>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#i-sim"/></svg><span>بطاقة Nano SIM 4G مع باقة إنترنت (غير مرفقة)</span></li>
+            <li><svg aria-hidden="true"><use href="#i-plug"/></svg><span>مقبس كهربائي داخل المنزل للمحوّل</span></li>
+            <li><svg aria-hidden="true"><use href="#i-cable"/></svg><span>تمرير الكابل من الخارج إلى الداخل. حسب المسافة، قد تحتاج إلى كابل إيثرنت أطول.</span></li>
+          </ul>
+        </div>
+        <div class="photo-pair">
+          <figure><img src="../assets/ports.webp" alt="الجزء السفلي من الراوتر مفتوحاً: مكان شريحة Nano SIM ومنفذ إيثرنت وزر إعادة الضبط" width="700" height="700" loading="lazy"><figcaption>مكان شريحة Nano SIM ومنفذ الكابل</figcaption></figure>
+          <figure><img src="../assets/kit.webp" alt="محتوى العلبة: الراوتر، الهوائيات، محوّل PoE، الكابل، حلقة التثبيت، دليل الاستعمال" width="800" height="800" loading="lazy"><figcaption>محتوى العلبة</figcaption></figure>
+        </div>
+        <p class="help">تفضّل المساعدة؟ <b>GTEL Store يوفّر أيضاً خدمة التركيب.</b> اتصل بنا على <bdi dir="ltr">06 66 28 73 41</bdi>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. RÉSISTANCE EXTÉRIEURE -->
+<section class="band dark" aria-labelledby="h-tough">
+  <div class="wrap tough">
+    <div class="tough-media"><img src="../assets/maison.webp" alt="راوتر Cudy LT400 Outdoor مثبت على واجهة منزل" width="1000" height="424" loading="lazy"></div>
+    <div>
+      <span class="eyebrow"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>مصمم للخارج</span>
+      <h2 class="h2" id="h-tough">مصاوب باش يبقى برّا، <em>فالشتا والغبرة</em></h2>
+      <p class="lead">علبته تحمي الراوتر من المطر والغبار. لا حاجة لإدخاله عندما يتغيّر الطقس.</p>
+      <div class="stats">
+        <div class="stat"><div class="k">IP65</div><div class="v">محمي من المطر والغبار</div></div>
+        <div class="stat"><div class="k"><bdi dir="ltr">4 kV</bdi></div><div class="v">حماية من ارتفاع الجهد الكهربائي</div></div>
+        <div class="stat"><div class="k">كابل واحد</div><div class="v">الكهرباء والإنترنت عبر نفس الكابل (<bdi dir="ltr">PoE 24 V</bdi>)</div></div>
+        <div class="stat"><div class="k">عمود أو حائط</div><div class="v">حلقة التثبيت على العمود مرفقة</div></div>
+      </div>
+      <a class="btn" href="#commande">أريد واحداً <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. OPÉRATEURS -->
+<section class="band" aria-labelledby="h-ops">
+  <div class="wrap">
+    <div class="head c">
+      <span class="eyebrow"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>المشغّلون</span>
+      <h2 class="h2" id="h-ops">حط البيس 4G <em>ديال الأوبيراتور ديالك</em></h2>
+      <p class="lead">يقبل الراوتر بطاقة Nano SIM من اتصالات المغرب أو أورنج أو إنوي. اختر المشغّل الذي يلتقط أفضل إشارة في مكان التركيب.</p>
+    </div>
+    <ul class="ops" aria-label="المشغّلون المتوافقون">
+      <li class="op"><img src="../assets/op-iam.svg" alt="اتصالات المغرب" width="286" height="149"></li>
+      <li class="op orange"><img src="../assets/op-orange.svg" alt="أورنج" width="120" height="120"></li>
+      <li class="op"><img src="../assets/op-inwi.svg" alt="إنوي" width="512" height="156"></li>
+    </ul>
+    <div class="op-facts">
+      <div class="op-fact"><svg aria-hidden="true"><use href="#i-sim"/></svg><span><b>بطاقة Nano SIM</b> مع باقة إنترنت مفعّلة. الشريحة غير مرفقة.</span></div>
+      <div class="op-fact"><svg aria-hidden="true"><use href="#i-pin"/></svg><span><b>جرّب أولاً:</b> شاهد إشارة 4G على هاتفك، في الخارج، في المكان المختار.</span></div>
+      <div class="op-fact"><svg aria-hidden="true"><use href="#i-wifi"/></svg><span><b>السرعة تختلف</b> حسب التغطية في ذلك المكان، والمشغّل، وباقتك.</span></div>
+    </div>
+    <p class="disclaim">الشعارات مذكورة للإشارة إلى التوافق فقط. GTEL Store وCudy ليسا شريكين لهؤلاء المشغّلين.</p>
+  </div>
+</section>
+
+<!-- 7. USAGES -->
+<section class="band tint" aria-labelledby="h-uses">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>لمن هذا الراوتر؟</span>
+      <h2 class="h2" id="h-uses">فين ما كاينش الفيبر، <em>الـ4G كتقضي الغرض</em></h2>
+    </div>
+    <div class="uses">
+      <article class="use"><img src="../assets/maison.webp" alt="" loading="lazy"><div><h3>المنزل والفيلا</h3><p>إنترنت للعائلة عندما لا يتوفر الفيبر في الحي.</p></div></article>
+      <article class="use"><img src="../assets/ferme.webp" alt="" loading="lazy"><div><h3>الضيعة والأرض الفلاحية</h3><p>اتصال بعيداً عن المدينة، بشرط توفر تغطية 4G في المكان.</p></div></article>
+      <article class="use"><img src="../assets/commerce.webp" alt="" loading="lazy"><div><h3>المقهى والمحل التجاري</h3><p>الويفي لنشاطك دون انتظار تركيب خط ثابت.</p></div></article>
+    </div>
+    <div class="also"><b>وأيضاً لـ:</b><span>المنزل الثانوي</span><span>ورش البناء</span><span>كاميرات المراقبة</span></div>
+    <div class="cta-row c"><a class="btn" href="#commande">اطلب الراوتر <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- 8. FICHE TECHNIQUE -->
+<section class="band" aria-labelledby="h-spec">
+  <div class="wrap spec-wrap">
+    <img class="spec-img" src="../assets/front.webp" alt="Cudy LT400 Outdoor من الأمام بهوائييه" width="700" height="700" loading="lazy">
+    <div>
+      <span class="eyebrow"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>البطاقة التقنية</span>
+      <h2 class="h2" id="h-spec" style="font-size:clamp(24px,5.4vw,32px)">شنو فيه بالضبط؟</h2>
+      <dl class="spec">
+        <div><dt>الطراز</dt><dd><bdi>Cudy LT400 Outdoor (Extérieur 1.0)</bdi></dd></div>
+        <div><dt>شبكة الهاتف</dt><dd><bdi dir="ltr">4G LTE Cat. 4</bdi><small>حتى 150 ميغابت في الثانية في الاستقبال، نظرياً</small></dd></div>
+        <div><dt>الويفي</dt><dd><bdi dir="ltr">N300, 2.4 GHz</bdi></dd></div>
+        <div><dt>بطاقة SIM</dt><dd>منفذ واحد Nano SIM</dd></div>
+        <div><dt>المنفذ</dt><dd>منفذ إيثرنت واحد (تغذية <bdi dir="ltr">PoE 24 V</bdi>)</dd></div>
+        <div><dt>العلبة</dt><dd>IP65، حماية من ارتفاع الجهد <bdi dir="ltr">4 kV</bdi></dd></div>
+        <div><dt>في العلبة</dt><dd>الراوتر، هوائيان، محوّل PoE، كابل إيثرنت، حلقة تثبيت، دليل الاستعمال</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- 9. AVIS CLIENTS + GTEL STORE -->
+<section class="band tint" aria-labelledby="h-reviews">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>آراء الزبناء</span>
+      <h2 class="h2" id="h-reviews">شنو كيقولو <em>الكليان ديالنا</em></h2>
+    </div>
+    <span class="sample">نموذج: أمثلة توضيحية، تُستبدل بآراء حقيقية للزبناء قبل النشر</span>
+    <div class="reviews" id="reviews" tabindex="0" aria-label="آراء الزبناء، اسحب للمزيد">
+      <figure class="rv" style="margin:0" aria-label="الرأي 1 من 8"><blockquote>ركّبته في البيت لأن الشبكة كانت ضعيفة في الداخل. الأمور أفضل بكثير منذ أن وضعت الراوتر في الخارج.</blockquote><figcaption class="who"><span class="av" aria-hidden="true">ي</span><span><b>يوسف</b><span>الدار البيضاء</span></span></figcaption></figure>
+      <figure class="rv" style="margin:0" aria-label="الرأي 2 من 8"><blockquote>نستعمله في منزلنا بالبادية. عملي جداً عندما لا يتوفر الفيبر في الحي.</blockquote><figcaption class="who"><span class="av" aria-hidden="true">ف</span><span><b>فاطمة</b><span>بوسكورة</span></span></figcaption></figure>
+      <figure class="rv" style="margin:0" aria-label="الرأي 3 من 8"><blockquote>كنت أبحث عن حل لمحلي التجاري. الراوتر يقوم بعمله، وأستطيع ربط هاتفي وحاسوبي.</blockquote><figcaption class="who"><span class="av" aria-hidden="true">م</span><span><b>مهدي</b><span>مراكش</span></span></figcaption></figure>
+      <figure class="rv" style="margin:0" aria-label="الرأي 4 من 8"><blockquote>لا أفهم كثيراً في الراوترات، لكن الفريق شرح لي جيداً كيف أستعمله. شكراً GTEL Store.</blockquote><figcaption class="who"><span class="av" aria-hidden="true">س</span><span><b>سعاد</b><span>الرباط</span></span></figcaption></figure>
+      <figure class="rv" style="margin:0" aria-label="الرأي 5 من 8"><blockquote>اشتريته للضيعة. وضعت بطاقة SIM وثبّته في الخارج، حيث تكون الشبكة أفضل.</blockquote><figcaption class="who"><span class="av" aria-hidden="true">ح</span><span><b>حمزة</b><span>الجديدة</span></span></figcaption></figure>
+      <figure class="rv" style="margin:0" aria-label="الرأي 6 من 8"><blockquote>منتج جيد ووصل بسرعة. أستعمله للعمل ولهواتف العائلة في البيت.</blockquote><figcaption class="who"><span class="av" aria-hidden="true">خ</span><span><b>خديجة</b><span>طنجة</span></span></figcaption></figure>
+      <figure class="rv" style="margin:0" aria-label="الرأي 7 من 8"><blockquote>أخذته لمنزلنا الثانوي. عملي، خاصة أنه لا يوجد عندنا اشتراك فيبر هناك.</blockquote><figcaption class="who"><span class="av" aria-hidden="true">أ</span><span><b>أمين</b><span>القنيطرة</span></span></figcaption></figure>
+      <figure class="rv" style="margin:0" aria-label="الرأي 8 من 8"><blockquote>كانت لدي بعض الأسئلة قبل الطلب والفريق أجابني. المنتج يناسب ما كنت أبحث عنه.</blockquote><figcaption class="who"><span class="av" aria-hidden="true">ن</span><span><b>نادية</b><span>المحمدية</span></span></figcaption></figure>
+    </div>
+    <div class="dots" id="rv-dots" aria-label="اختر رأياً"></div>
+
+    <div class="seller-strip">
+      <div class="top-line">
+        <img src="../assets/gtel-logo.png" alt="GTEL Store" width="339" height="202">
+        <p>Cudy هي علامة الراوتر. <b style="color:var(--ink)">GTEL Store</b>، متجر للمعلوميات والشبكات بالدار البيضاء، يبيعه ويوصله ويرافقك.</p>
+      </div>
+    <div class="seller-grid">
+      <div class="sg"><svg aria-hidden="true"><use href="#i-store"/></svg><h3>منذ 2009</h3><p>مشاريع الشبكات والاتصال بالإنترنت في جميع أنحاء المغرب.</p></div>
+      <div class="sg"><svg aria-hidden="true"><use href="#i-pin"/></svg><h3>الاستلام من الدار البيضاء</h3><p>شارع إميل زولا (بلفيدير) أو شارع الفوارات (الحي المحمدي).</p></div>
+      <div class="sg"><svg aria-hidden="true"><use href="#i-chat"/></svg><h3>دعم 6 أيام في الأسبوع</h3><p>سؤال قبل الشراء أو بعده: <bdi dir="ltr">06 66 28 73 41</bdi>.</p></div>
+      <div class="sg"><svg aria-hidden="true"><use href="#i-shield"/></svg><h3>ضمان الصانع</h3><p>إمكانية الإرجاع خلال 7 أيام إذا لم يُستعمل المنتج وكان في علبته الأصلية.</p></div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. FAQ -->
+<section class="band" aria-labelledby="h-faq">
+  <div class="wrap">
+    <div class="head c">
+      <span class="eyebrow"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>أسئلة شائعة</span>
+      <h2 class="h2" id="h-faq">عندك سؤال؟ <em>ها الجواب</em></h2>
+    </div>
+    <div class="faq">
+      <details><summary>هل أحتاج إلى بطاقة SIM؟</summary><p>نعم. يعمل الراوتر ببطاقة Nano SIM 4G وباقة إنترنت مفعّلة. البطاقة غير مرفقة.</p></details>
+      <details><summary>مع أي مشغّل يعمل؟</summary><p>مع بطاقة SIM من اتصالات المغرب أو أورنج أو إنوي. اختر المشغّل الذي يلتقط أفضل إشارة في مكان تركيب الراوتر.</p></details>
+      <details><summary>هل سيعمل عندي؟</summary><p>يجب أن تتوفر شبكة 4G لمشغّلك في مكان التركيب. الأسهل: تحقّق من إشارة 4G على هاتفك، في الخارج، في ذلك المكان. السرعة تختلف حسب التغطية والمشغّل والباقة.</p></details>
+      <details><summary>هل يصل الويفي إلى داخل المنزل؟</summary><p>يبث الراوتر الويفي من الخارج. في الداخل، يختلف المدى حسب المسافة والجدران. لتغطية أفضل للمنزل، اربط راوتر أو نقطة وصول ويفي بالمحوّل الموجود في الداخل.</p></details>
+      <details><summary>هل يمكن أن يبقى في الخارج طوال السنة؟</summary><p>نعم، هو مصمم للخارج. علبته IP65 تحميه من المطر والغبار، ويتوفر على حماية من ارتفاع الجهد الكهربائي تصل إلى <bdi dir="ltr">4 kV</bdi>.</p></details>
+      <details><summary>هل التركيب صعب؟</summary><p>يكفي إدخال الشريحة، وتثبيت الراوتر على عمود أو حائط، ثم تمرير كابل إلى مقبس كهربائي في الداخل. تتم الإعدادات من المتصفح أو من تطبيق Cudy. وإن فضّلت، يمكن لـ GTEL Store التكفّل بالتركيب: اسألنا.</p></details>
+      <details><summary>كيف يتم الطلب والدفع؟</summary><p>املأ الاستمارة، ونتصل بك لتأكيد الطلب، ثم تدفع نقداً عند الاستلام. أغلب الطلبات تصل خلال 48 ساعة، حسب توفر المنتج.</p></details>
+    </div>
+    <div class="cta-row c"><a class="btn" href="#commande">أكمل طلبي <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- 11. COMMANDE -->
+<section class="band tint" id="commande" aria-labelledby="h-order">
+  <div class="wrap order">
+    <div class="order-side">
+      <span class="eyebrow"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>الطلب</span>
+      <h2 class="h2" id="h-order">طلب الراوتر ديالك <em>دابا</em></h2>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>الدفع نقداً عند الاستلام</span></li>
+        <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>مكالمة تأكيد قبل الإرسال</span></li>
+        <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>توصيل مجاني، غالباً خلال 48 ساعة</span></li>
+        <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>إمكانية الإرجاع خلال 7 أيام</span></li>
+      </ul>
+      <img src="../assets/box.webp" alt="علبة Cudy LT400 Outdoor" width="600" height="600" loading="lazy" style="margin-top:22px;max-width:300px">
+    </div>
+    <form class="form" id="order-form" novalidate>
+      <h3>معلوماتك</h3>
+      <p class="sub">بضع ثوانٍ تكفي. سنتصل بك للتأكيد.</p>
+      <fieldset style="border:0;padding:0;margin:0">
+        <legend style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">اختر عرضك</legend>
+        <div class="offers">
+          <label class="offer"><input type="radio" name="qty" id="qty-1" value="1" checked><span class="q">راوتر واحد</span><div class="pr">897 درهم</div><div class="old">1299 درهم</div></label>
+          <label class="offer"><span class="tag">الأكثر طلباً</span><input type="radio" name="qty" id="qty-2" value="2"><span class="q">راوتران</span><div class="pr">1700 درهم</div><div class="old">2598 درهم</div></label>
+          <label class="offer"><input type="radio" name="qty" id="qty-3" value="3"><span class="q">3 راوترات</span><div class="pr">2400 درهم</div><div class="old">3897 درهم</div></label>
+        </div>
+      </fieldset>
+      <div class="fields">
+        <label for="f-name">الاسم الكامل <i>*</i><input id="f-name" name="name" autocomplete="name" placeholder="اسمك الكامل"></label>
+        <label for="f-tel">رقم الهاتف <i>*</i><input id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="06 XX XX XX XX" dir="ltr"></label>
+        <label for="f-city">المدينة <i>*</i><input id="f-city" name="city" autocomplete="address-level2" placeholder="اكتب مدينتك"></label>
+        <label for="f-addr">العنوان <i>*</i><input id="f-addr" name="addr" autocomplete="street-address" placeholder="الحي، الشارع، رقم المنزل"></label>
+      </div>
+      <button class="btn btn-full" type="submit" id="f-submit">اطلب الآن — <span id="f-total">897 درهم</span></button>
+      <p class="form-msg" id="f-msg" hidden>نموذج: لا يتم إرسال أي طلب. الاستمارة الحقيقية هي استمارة Dropify.</p>
+      <ul class="form-trust">
+        <li><svg aria-hidden="true"><use href="#i-cash"/></svg>الدفع عند الاستلام</li>
+        <li><svg aria-hidden="true"><use href="#i-truck"/></svg>التوصيل غالباً خلال 48 ساعة</li>
+        <li><svg aria-hidden="true"><use href="#i-return"/></svg>الإرجاع خلال 7 أيام</li>
+      </ul>
+    </form>
+  </div>
+</section>
+
+<!-- 12. CTA FINAL -->
+<section class="band final" aria-labelledby="h-final">
+  <div class="wrap">
+    <h2 id="h-final">حطّو برّا. <em>وتكونيكطا من الداخل.</em></h2>
+    <p class="lead">راوتر مصمم للخارج، وبطاقة SIM 4G من مشغّلك، وكابل واحد: إنترنت دون انتظار الفيبر.</p>
+    <a class="btn" href="#commande">اطلب الآن <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <ul class="assure">
+      <li><svg aria-hidden="true"><use href="#i-cash"/></svg>الدفع عند الاستلام</li>
+      <li><svg aria-hidden="true"><use href="#i-phone"/></svg>تأكيد عبر الهاتف</li>
+      <li><svg aria-hidden="true"><use href="#i-truck"/></svg>توصيل مجاني</li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <img src="../assets/gtel-logo-white.png" alt="GTEL Store" width="339" height="202">
+      <p style="margin-top:12px">البائع في هذه الصفحة هو GTEL Store. Cudy هي علامة الراوتر.</p>
+    </div>
+    <div>
+      <h4>اتصل بنا</h4>
+      <p class="tel"><bdi dir="ltr">+212 666 287 341</bdi></p>
+      <p>الهاتف وواتساب · دعم 6 أيام في الأسبوع</p>
+      <p>gtelstore.ma</p>
+    </div>
+    <div>
+      <h4>الدار البيضاء</h4>
+      <p>المقر: 241، شارع إميل زولا، بلفيدير</p>
+      <p>المستودع: شارع الفوارات، الحي المحمدي</p>
+    </div>
+    <p class="legal">اتصالات المغرب وأورنج وإنوي علامات مملوكة لأصحابها، ذُكرت للإشارة إلى التوافق فقط.</p>
+  </div>
+</footer>
+
+<div class="sticky" aria-label="اطلب">
+  <span class="p">897 درهم <s style="font-size:13px;font-weight:600;color:var(--muted)">1299</s><small>الدفع عند الاستلام</small></span>
+  <a class="btn" href="#commande">اطلب</a>
+</div>
+
+<script>
+(function(){
+  var prices={1:'897 درهم',2:'1700 درهم',3:'2400 درهم'};
+  document.querySelectorAll('input[name=qty]').forEach(function(r){
+    r.addEventListener('change',function(){document.getElementById('f-total').textContent=prices[r.value];});
+  });
+  var track=document.getElementById('reviews'),dots=document.getElementById('rv-dots');
+  if(track&&dots){
+  var cards=track.querySelectorAll('.rv');
+  cards.forEach(function(c,i){
+    var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','الرأي '+(i+1));
+    b.addEventListener('click',function(){c.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});});
+    dots.appendChild(b);
+  });
+  function syncDots(){
+    var tr=track.getBoundingClientRect(),mid=tr.left+tr.width/2,best=0,d=1e9;
+    cards.forEach(function(c,i){var r=c.getBoundingClientRect(),x=Math.abs(r.left+r.width/2-mid);if(x<d){d=x;best=i;}});
+    dots.querySelectorAll('button').forEach(function(b,i){b.setAttribute('aria-current',i===best);});
+  }
+  track.addEventListener('scroll',function(){requestAnimationFrame(syncDots);},{passive:true});
+  syncDots();
+  }
+  document.getElementById('order-form').addEventListener('submit',function(e){
+    e.preventDefault();document.getElementById('f-msg').hidden=false;
+  });
+})();
+</script>
+
+</div>
